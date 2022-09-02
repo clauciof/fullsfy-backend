@@ -1,0 +1,28 @@
+{
+  "name": "fullsfy-backend",
+  "version": "1.0.0",
+  "description": "api spotify integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clauciof/fullsfy-backend.git"
+  },
+  "author": "claucio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clauciof/fullsfy-backend/issues"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "https": "^1.0.0",
+    "mongoose": "^6.3.8",
+    "qs": "^6.11.0",
+    "querystring": "^0.2.1"
+  },
+  "homepage": "https://github.com/clauciof/fullsfy-backend#readme"
+}
