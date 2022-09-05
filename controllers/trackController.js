@@ -30,13 +30,25 @@ class TrackController {
 
             const access_token = await getToken() //token_response.data.access_token
             const id = req.query.id
-            const response = await axios.get(`https://api.spotify.com/v1/audio-features/${id}`, {
+            const audioFeatureResponse = await axios.get(`https://api.spotify.com/v1/audio-features/${id}`, {
                 headers:{
                     'Authorization': `Bearer ${access_token}`
                 }
             })
+
+            const trackResponse = await axios.get(`https://api.spotify.com/v1/tracks/${id}`, {
+                headers:{
+                    'Authorization': `Bearer ${access_token}`
+                }
+            })
+
+            const response = {
+                'audioFeature': audioFeatureResponse.data,
+                'trackResponse': trackResponse.data
+
+            }
                 
-            res.json(response.data);
+            res.json(response);
         }catch (error) {
             console.log(error)
             res.status(400)
